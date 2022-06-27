@@ -1,0 +1,19 @@
+.sidebar{
+    background-color: #3c4b5c;
+    height: auto;
+}
+
+.sidebar > ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.link-wrapper {
+    padding: .5rem 2.5rem;
+}
+
+.link-wrapper:hover {
+    background-color: #303c4a;
+    transition: background-color 500ms; 
+}

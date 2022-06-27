@@ -1,0 +1,13 @@
+.App{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.sidebar{
+    flex-basis:content;
+}
+
+.page{
+    flex-grow: 1;
+    height: 100vh;
+}
