@@ -8,5 +8,4 @@ export const StyledLink = styled(NavLink)`
     :hover{
         color: #9dd18c
     }
-
 `;

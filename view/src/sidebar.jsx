@@ -11,7 +11,6 @@ const Sidebar = props => {
         <div className='sidebar'>
             <ul>
                 {SidebarData.map((item, index) => 
-                    
                     <li key = {index}>
                         <StyledLink to = {item.path}>
                             <div className='link-wrapper'>
@@ -20,7 +19,6 @@ const Sidebar = props => {
                             </div>
                         </StyledLink>
                     </li>
-                    
                 )}
             </ul>
         </div>
