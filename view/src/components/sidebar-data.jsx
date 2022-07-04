@@ -1,15 +1,5 @@
 import React from 'react'
-import { AiFillHome } from 'react-icons/ai';
-import {AiFillProject} from 'react-icons/ai';
-import {MdArrowDropDown} from 'react-icons/md';
-import styled from 'styled-components';
-
-const StyledHome = styled(AiFillHome)`
-    padding-right: .5rem;
-`
-const StyledProject = styled(AiFillProject)`
-    padding-right: .5rem;
-`
+import { StyledHome, StyledProject} from './styling'
 
 export const SidebarData = [
     {
@@ -20,14 +10,18 @@ export const SidebarData = [
     {
         title: 'Projects',
         path: 'projects',
-        icon: <StyledProject/>
-    }, 
-    {
-        title: 'Project',
-        path: 'project'
-    }, 
-    {
-        title: 'Document',
-        path: 'project/document'
+        icon: <StyledProject/>,
+        subset:[
+            {
+                title: 'Project 1',
+                path: 'project_1',
+                subset: [
+                    {
+                        title: 'Document 1',
+                        path: 'project_1/document_1'
+                    }
+                ]
+            }
+        ]
     }
 ]
