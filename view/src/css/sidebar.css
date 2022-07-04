@@ -3,19 +3,14 @@
     --darkergrey: #303c4a;
 }
 
-.sidebar{
-    background-color: var(--greyblue);
-    height: auto;
-}
-
-.sidebar > ul{
-    list-style-type: none;
-    padding: 0;
-    margin-top: 1.5rem;
+.close {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .link-wrapper {
     padding: .5rem 2.5rem;
+    display: flex;
 }
 
 .link-wrapper:hover {
