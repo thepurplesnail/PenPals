@@ -9,11 +9,10 @@ import {IoIosClose} from 'react-icons/io'
 export const StyledSidebarWrap = styled.div`
     background-color: #3c4b5c;
     height: 100%;
-    
+    flex-basis: 'fit-content';
     position: absolute;
     left: ${props => props.showSidebar ? '0' : '-100%'};
     transition: 700ms;
-    z-index: 10;
 `
 
 // icons
