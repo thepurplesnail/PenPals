@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import './css/App.css'
+import './styling/App.css'
 import Sidebar from './sidebar'
 import styled from 'styled-components'
 import { Outlet } from 'react-router-dom'
-import { StyledMenu } from './components/styling'
+import { StyledMenu } from './styling/styling'
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(false);

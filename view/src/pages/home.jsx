@@ -2,7 +2,9 @@ import React from 'react'
 
 const Home = props => {
     return(
-        <div className='page'>Home</div>
+        <div className='page'>
+            <h1>Home</h1>
+        </div>
     )
 }
 
