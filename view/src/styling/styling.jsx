@@ -4,16 +4,29 @@ import styled, {css} from "styled-components"
 import { AiFillHome, AiFillProject} from 'react-icons/ai'
 import {RiArrowDropDownLine} from 'react-icons/ri'
 import {HiMenuAlt2} from 'react-icons/hi'
-import {IoIosClose} from 'react-icons/io'
+import {IoIosClose, IoIosDocument} from 'react-icons/io'
+
+export const highlight = '#7ea7e0'
 
 export const StyledSidebarWrap = styled.div`
     background-color: #3c4b5c;
-    height: 100%;
-    flex-basis: 'fit-content';
+    height: 100vh;
     position: absolute;
     left: ${props => props.showSidebar ? '0' : '-100%'};
     transition: 700ms;
+    opacity: 95%;
+    width: 13rem;
 `
+
+export const StyledLink = styled(NavLink)`
+    color: ${'#fff'};
+    text-decoration: none;
+    font-weight: 600;
+    font-size: ${props => (props.depth === '1') ? '.85rem' : 'auto'};
+    :hover{
+        color: ${highlight}
+    }
+`;
 
 // icons
 
@@ -22,7 +35,7 @@ export const StyledMenu = styled(HiMenuAlt2)`
     height: 2rem;
     width: 2rem;
     :hover{
-        color: #9dd18c;
+        color: ${highlight};
         cursor: pointer;
     }
 `
@@ -31,18 +44,10 @@ export const StyledClose = styled(IoIosClose)`
     height: 2rem;
     width: 2rem;
     :hover{
-        color: #9dd18c;
+        color: ${highlight};
         cursor: pointer;
     }
 `
-export const StyledLink = styled(NavLink)`
-    color: ${props=> props.isActive ? '#9dd18c' : '#fff'};
-    text-decoration: none;
-    font-weight: 600;
-    :hover{
-        color: #9dd18c
-    }
-`;
 
 export const StyledHome = styled(AiFillHome)`
     padding-right: .5rem;
@@ -51,6 +56,7 @@ export const StyledProject = styled(AiFillProject)`
     padding-right: .5rem;
 `
 export const StyledCaret = styled(RiArrowDropDownLine)`
+    color: ${'#fff'};
     padding: 0 .5rem;
     
     ${props =>
@@ -58,4 +64,7 @@ export const StyledCaret = styled(RiArrowDropDownLine)`
         css`
           transform: rotate(180deg);
         `};
+`
+export const StyledDocument = styled(IoIosDocument)`
+    padding-right: .5rem;
 `
