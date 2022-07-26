@@ -8,7 +8,7 @@ node populatedb mongodb+srv://FriedIceCream:<password>@pen-pals.kwg7l0g.mongodb.
 node populatedb mongodb+srv://FriedIceCream:<password>@pen-pals.kwg7l0g.mongodb.net/pen_pals
 */
 
-console.log('This script populates test project and documents to your database. Specified database as argument: populatedb mongodb+srv://FriedIceCream:<password>@pen-pals.kwg7l0g.mongodb.net/?retryWrites=true&w=majority');
+console.log('This script populates test project and documents to your database.');
 
 // Get arguments passed on command line
 var userArgs = process.argv.slice(2);
@@ -72,10 +72,16 @@ function documentCreate(title, started, modified, text, cb) {
 function createProject(cb) {
     async.series([
         function(callback) {
-            projectCreate("Winter Theme", new Date(1995, 11, 25), new Date(1995, 12, 25), [], callback);
+            projectCreate("Fall Theme", new Date(2000, 08, 25), new Date(2000, 09, 24), ["1", "2"], callback);
         },
         function(callback) {
-            projectCreate("Fall Theme", new Date(2005, 10, 25), new Date(2005, 11, 24), [], callback);
+            projectCreate("Winter Theme", new Date(2005, 11, 25), new Date(2005, 12, 24), ["3", "4"], callback);
+        },
+        function(callback) {
+            projectCreate("Spring Theme", new Date(2010, 02, 25), new Date(2010, 03, 24), ["5", "6"], callback);
+        },
+        function(callback) {
+            projectCreate("Summer Theme", new Date(2015, 05, 25), new Date(2015, 06, 24), ["7", "8"], callback);
         },
     ],
     // optional callback
@@ -85,16 +91,28 @@ function createProject(cb) {
 function createDocument(cb) {
     async.series([
         function(callback) {
-            documentCreate("Christmas", new Date(1995, 11, 25), new Date(1995, 12, 01), "Christmas is here to stay", callback);
+            documentCreate("Grounded Turkey", new Date(2000, 08, 25), new Date(2000, 09, 24), "Grounded Turkey for Thanksgiving", callback);
         },
         function(callback) {
-            documentCreate("Santa Claws", new Date(1995, 12, 02), new Date(1995, 12, 25), "Santa Claws is not real", callback);
+            documentCreate("Falling Leaves", new Date(2000, 08, 25), new Date(2000, 09, 24), "Leaves fall in Fall", callback);
         },
         function(callback) {
-            documentCreate("Grounded Turkey", new Date(2005, 11, 02), new Date(2005, 11, 24), "Grounded Turkey for Thanksgiving", callback);
+            documentCreate("Christmas", new Date(2005, 11, 25), new Date(2005, 12, 24), "Christmas is here to stay", callback);
         },
         function(callback) {
-            documentCreate("Falling Leaves", new Date(2005, 10, 25), new Date(2005, 11, 01), "Leaves fall in Fall", callback);
+            documentCreate("Santa Claws", new Date(2005, 11, 25), new Date(2005, 12, 24), "Santa Claws is not real", callback);
+        },
+        function(callback) {
+            documentCreate("Easter Buster", new Date(2010, 02, 25), new Date(2010, 03, 24), "Buster coming to stop Easter", callback);
+        },
+        function(callback) {
+            documentCreate("April Tsunami", new Date(2010, 02, 25), new Date(2010, 03, 24), "Instead of rain, a wave arrives", callback);
+        },
+        function(callback) {
+            documentCreate("May or may Not", new Date(2015, 05, 25), new Date(2015, 06, 24), "What may happen", callback);
+        },
+        function(callback) {
+            documentCreate("Deadly Summer", new Date(2015, 05, 25), new Date(2015, 06, 24), "The Sun holds a deadly laser", callback);
         },
     ],
     // optional callback
