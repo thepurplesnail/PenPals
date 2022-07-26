@@ -1,5 +1,13 @@
 #! /usr/bin/env node
 
+/*
+To run this script: 
+node populatedb <your mongodb url>
+
+node populatedb mongodb+srv://FriedIceCream:<password>@pen-pals.kwg7l0g.mongodb.net/<optional-database>
+node populatedb mongodb+srv://FriedIceCream:<password>@pen-pals.kwg7l0g.mongodb.net/pen_pals
+*/
+
 console.log('This script populates test project and documents to your database. Specified database as argument: populatedb mongodb+srv://FriedIceCream:<password>@pen-pals.kwg7l0g.mongodb.net/?retryWrites=true&w=majority');
 
 // Get arguments passed on command line
@@ -109,6 +117,3 @@ function(err, results) {
     // All done, disconnect from database
     mongoose.connection.close();
 });
-
-
-
