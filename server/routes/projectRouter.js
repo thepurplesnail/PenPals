@@ -1,22 +1,19 @@
 var express = require('express');
 var router = express.Router();
-
-// get controller
-var projectController = require('../controllers/projectController');
+var projectController = require('../controllers/projectController');    // get controller
 
 // base route set: /project
-
 router.get('/', projectController.getProjects);
 
 // Note: "/create" has to be placed before "/:projId"
 // while "/create" is fixed, "/:projId" is a variable
 
-router.get('/create', projectController.createProject); 
+router.post('/create', projectController.createProject); 
 
 router.get('/:projId', projectController.getProject);
 
-router.get('/:projId/update', projectController.updateProject);
+router.put('/:projId/update', projectController.updateProject);
 
-router.get('/:projId/delete', projectController.deleteProject);
+router.delete('/:projId/delete', projectController.deleteProject);
 
 module.exports = router;
